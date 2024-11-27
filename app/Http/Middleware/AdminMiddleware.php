@@ -17,12 +17,9 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        Log::info('AdminMiddleware: Checking user authentication and admin status.');
         if (Auth::check() && Auth::user()->is_admin) {
-            Log::info('AdminMiddleware: User is authenticated and is an admin.');
             return $next($request);
         }
-        Log::info('AdminMiddleware: User is not authenticated or not an admin.');
         return redirect('/')->with('error', 'You do not have admin access.');
     }
 }

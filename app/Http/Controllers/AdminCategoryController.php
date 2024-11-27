@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminCategoryController extends Controller
 {
@@ -24,11 +25,19 @@ class AdminCategoryController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'image' => 'nullable|image|max:2048',
+            'header_image' => 'nullable|image|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('images/categories', 'public');
+            $imageName = $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->storeAs('images/categories', $imageName, 'public');
             $validated['image'] = '/storage/' . $path;
+        }
+
+        if ($request->hasFile('header_image')) {
+            $headerImageName = $request->file('header_image')->getClientOriginalName();
+            $path = $request->file('header_image')->storeAs('images/categories', $headerImageName, 'public');
+            $validated['header_image'] = '/storage/' . $path;
         }
 
         Category::create($validated);
@@ -47,10 +56,40 @@ class AdminCategoryController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'image' => 'nullable|image|max:2048',
+            'header_image' => 'nullable|image|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('images/categories', 'public');
+            // Delete the old image if it exists
+            if ($category->image) {
+                Storage::disk('public')->delete(str_replace('/storage/', '', $category->image));
+            }
+
+            $imageName = $request->file('image')->getClientOriginalName();
+            $path = $request->file('image')->storeAs('images/categories', $imageName, 'public');
+            $validated['image'] = '/storage/' . $path;
+        } elseif ($request->input('delete_image') === '1') {
+            // Delete the old image if the delete_image checkbox is checked
+            if ($category->image) {
+                Storage::disk('public')->delete(str_replace('/storage/', '', $category->image));
+                $validated['image'] = null;
+            }
+        }
+        if ($request->hasFile('header_image')) {
+            // Delete the old header image if it exists
+            if ($category->header_image) {
+                Storage::disk('public')->delete(str_replace('/storage/', '', $category->header_image));
+            }
+
+            $headerImageName = $request->file('header_image')->getClientOriginalName();
+            $path = $request->file('header_image')->storeAs('images/categories', $headerImageName, 'public');
+            $validated['header_image'] = '/storage/' . $path;
+        } elseif ($request->input('delete_header_image') === '1') {
+            // Delete the old header image if the delete_header_image checkbox is checked
+            if ($category->header_image) {
+                Storage::disk('public')->delete(str_replace('/storage/', '', $category->header_image));
+                $validated['header_image'] = null;
+            }
         }
 
         $category->update($validated);
@@ -60,6 +99,14 @@ class AdminCategoryController extends Controller
 
     public function destroy(Category $category)
     {
+        // Delete the images if they exist
+        if ($category->image) {
+            Storage::disk('public')->delete(str_replace('/storage/', '', $category->image));
+        }
+        if ($category->header_image) {
+            Storage::disk('public')->delete(str_replace('/storage/', '', $category->header_image));
+        }
+
         $category->delete();
         return redirect()->route('admin.categories.index');
     }
