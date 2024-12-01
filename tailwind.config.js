@@ -13,7 +13,7 @@ export default {
         extend: {
             fontFamily: {
                 raleway: ["Raleway", "sans-serif"],
-
+                montserrat: ["Montserrat", "sans-serif"],
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
         },

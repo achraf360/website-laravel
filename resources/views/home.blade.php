@@ -3,19 +3,110 @@
 @section('title', 'Home')
 
 @section('content')
-<section class="relative bg-cover bg-center h-screen w-screen overflow-hidden" style="background-image: url('/images/home-top-bg.jpg');">
+<section class="flex flex-col relative bg-cover bg-center h-fit w-screen overflow-hidden py-20 bg-white" style="background-image: url('/images/home-top-bg.jpg');">
   <!-- <div class="absolute inset-0 bg-black opacity-50"></div> -->
-  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-black">
-    <h1 class="text-5xl font-bold mb-4">Welcome to Our Store</h1>
-    <p class="text-xl mb-8">Discover our amazing products and categories</p>
-    <a href="{{ route('categories.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Shop Now</a>
+  <div class="relative z-10 flex flex-col items-start justify-center h-full text-start w-1/2 pl-4">
+    <h1 class="text-5xl font-bold mb-4">L’Excellence de la <span class="text-indigo-800">Boulangerie</span> et <span class="text-green-800">Viennoiserie</span> industrielles</h1>
+    <p class="text-base text-slate-500 mb-8">Chez DELI’S, nous allions innovation et qualité pour offrir une large gamme de produits en boulangerie, pâtisserie, viennoiserie et snacking. Partenaire privilégié des professionnels CHR à travers tout le Maroc, nous nous engageons à fournir des produits performants et un service irréprochable.</p>
+
+    <a href="{{ route('categories.index') }}"
+      class="inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-indigo-800 hover:bg-[#6FB72B] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200">
+      Découvrir nos produits
+    </a>
+  </div>
+  <div class="flex flex-row px-10 py-10 gap-8">
+    <div class="flex flex-col">
+      <span class="text-2xl font-bold">
+        +15 Years
+      </span>
+      <span class="text-gray-600">
+        Experience
+      </span>
+    </div>
+    <div class="flex flex-col">
+      <span class="text-2xl font-bold">
+        +200
+      </span>
+      <span class="text-gray-600">
+        Products
+      </span>
+    </div>
+    <div class="flex flex-col">
+      <span class="text-2xl font-bold">
+        99.8%
+      </span>
+      <span class="text-gray-600">
+        Satisfaction
+      </span>
+    </div>
   </div>
 </section>
-<section class="p-8">
+
+
+<section
+  class="w-full flex flex-col gap-8 bg-slate-100">
+  <div class="flex flex-col md:flex-row gap-4 px-4 pt-10 lg:pt-20">
+    <div class="flex md:flex-row-reverse items-start justify-center md:w-1/2">
+      <img
+        src="/images/Viennoiseries-Cat.jpg"
+        alt="Viennoiserie"
+        class="object-contain rounded-xl shadow-2xl shadow-gray-500/50 h-4/5" />
+    </div>
+    <div class="flex flex-col md:w-1/2 md:pr-10 lg:pr-40">
+      <h1
+        class=" text-2xl md:text-2xl font-black text-chopain-red opacity-75">
+        About us
+      </h1>
+      <h1
+        class=" decoration-chopain-orange text-2xl lg:text-4xl font-black text-black mb-6">
+        Solution Complète Proposée
+      </h1>
+      <p class="font-light text-xl md:text-base w-full">
+        CHOPAIN offre une solution complète axée à la fois sur les
+        produits et les services. Il propose un coin boulangerie et
+        pâtisserie occupant 2m² d&apos;espace pouvant être facilement
+        intégré à n&apos;importe quel agencement de magasin.
+        <br />
+        <br />
+        Les produits sont stockés dans un congélateur et cuits
+        ultérieurement pour garantir la fraîcheur pour les clients.
+      </p>
+      <div class="flex mt-10 gap-6 text-orange-800 mb-10">
+        <a
+          href="#"
+          class="flex items-center justify-between pointer-events-none">
+          <!-- <TbClockBolt class="w-12 h-12" /> -->
+          <span class="flex-shrink px-4 font-semibold">
+            Solution <br />
+            Rapide
+          </span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center justify-between pointer-events-none">
+          <!-- <TbBaguette class="w-12 h-12" /> -->
+          <span class="flex-shrink px-4 font-semibold">
+            Produit <br />
+            Fraîche
+          </span>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="{{ route('categories.index') }}"
+          class="inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-indigo-800 hover:bg-[#6FB72B] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200">
+          Contactez-Nous
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="p-8 bg-white">
   <h1 class="text-5xl font-extrabold text-center text-gray-700 py-12">Nos Categories</h1>
 
 
-  <ul class="list-disc pl-5  grid grid-flow-row grid-cols-3 place-items-center gap-4">
+  <ul class="list-disc pl-5 grid grid-flow-row grid-cols-3 place-items-center gap-4">
     @foreach($categories as $category)
     <!-- <a href="{{ route('categories.show', $category->id) }}"> -->
     <a href="{{ route('categories.show', $category->name) }}"

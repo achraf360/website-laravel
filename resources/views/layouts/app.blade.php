@@ -15,11 +15,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Scripts -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
+  @livewireStyles
 </head>
 
-<body class="font-raleway">
+<body class="font-montserrat">
   <div class="min-h-screen bg-gray-100">
     @include('layouts.client_navigation')
+
+
 
     <!-- Page Heading -->
     @if (isset($header))
@@ -31,7 +34,7 @@
     @endif
 
     <!-- Page Content -->
-    <main class="overflow-x-hidden" id="main">
+    <main class="overflow-x-hidden text-black/70" id="main">
       @yield('content')
     </main>
 
@@ -116,7 +119,10 @@
     <!-- <footer class="bg-gray-800 text-white p-4 text-center">
       <p>&copy; {{ date('Y') }} Delis. All rights reserved.</p>
     </footer> -->
-  </div>
+
+    @livewireScripts
+    @vite('resources/js/app.js')
 </body>
+
 
 </html>
