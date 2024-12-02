@@ -7,6 +7,8 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,19 +31,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{category:name}', [CategoryController::class, 'show'])->name('categories.show');
 Route::get('/products/{product:name}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact-us', [ContactController::class, 'send'])->name('contact.send');
 
-// Admin routes
-// Route::middleware(['auth', 'admin'])->group(function () {
-//     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-//     Route::resource('admin/categories', CategoryController::class, ['as' => 'admin']);
-//     Route::resource('admin/products', ProductController::class, ['as' => 'admin']);
-// });
-
-// Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-//     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-//     Route::resource('categories', AdminCategoryController::class, ['as' => 'admin']);
-//     Route::resource('products', AdminProductController::class, ['as' => 'admin']);
-// });
 
 // Load authentication routes
 require __DIR__ . '/auth.php';

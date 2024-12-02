@@ -54,40 +54,45 @@
     </div>
     <div class="flex flex-col md:w-1/2 md:pr-10 lg:pr-40">
       <h1
-        class=" text-2xl md:text-2xl font-black text-chopain-red opacity-75">
+        class="text-2xl md:text-2xl font-yellowtail text-chopain-red opacity-75">
         About us
       </h1>
       <h1
         class=" decoration-chopain-orange text-2xl lg:text-4xl font-black text-black mb-6">
-        Solution Complète Proposée
+        Solution Complète Adaptée à Vos Besoins
       </h1>
       <p class="font-light text-xl md:text-base w-full">
-        CHOPAIN offre une solution complète axée à la fois sur les
-        produits et les services. Il propose un coin boulangerie et
-        pâtisserie occupant 2m² d&apos;espace pouvant être facilement
-        intégré à n&apos;importe quel agencement de magasin.
+        DELI’S propose une solution clé en main qui combine une gamme diversifiée de produits et un service professionnel. Avec plus de 200 références en boulangerie, viennoiserie, pâtisserie et snacking, nous vous offrons des produits performants, prêts à satisfaire les attentes de vos clients tout en s’intégrant parfaitement à votre activité.
         <br />
         <br />
-        Les produits sont stockés dans un congélateur et cuits
-        ultérieurement pour garantir la fraîcheur pour les clients.
+        Nos produits sont soigneusement stockés dans des conditions optimales et prêts à être préparés rapidement, garantissant une fraîcheur et une qualité constantes.
       </p>
       <div class="flex mt-10 gap-6 text-orange-800 mb-10">
         <a
           href="#"
           class="flex items-center justify-between pointer-events-none">
-          <!-- <TbClockBolt class="w-12 h-12" /> -->
+          <i class="fa-regular fa-star text-3xl items-center"></i>
           <span class="flex-shrink px-4 font-semibold">
-            Solution <br />
-            Rapide
+            Qualité <br />
+            Constante
           </span>
         </a>
         <a
           href="#"
           class="flex items-center justify-between pointer-events-none">
-          <!-- <TbBaguette class="w-12 h-12" /> -->
+          <i class="fa-solid fa-wand-magic-sparkles text-3xl items-center"></i>
           <span class="flex-shrink px-4 font-semibold">
-            Produit <br />
-            Fraîche
+            Fraîcheur <br />
+            Garanties
+          </span>
+        </a>
+        <a
+          href="#"
+          class="flex items-center justify-between pointer-events-none">
+          <i class="fa-regular fa-circle-check text-3xl items-center"></i>
+          <span class="flex-shrink px-4 font-semibold">
+            Service <br />
+            Réactif
           </span>
         </a>
       </div>

@@ -14,6 +14,7 @@ export default {
             fontFamily: {
                 raleway: ["Raleway", "sans-serif"],
                 montserrat: ["Montserrat", "sans-serif"],
+                yellowtail: ["Yellowtail", "sans-serif"],
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
         },
