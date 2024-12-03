@@ -31,6 +31,11 @@ class AdminTechnologyController extends Controller
         return redirect()->route('admin.technologies.index');
     }
 
+    public function show(Technology $technology)
+    {
+        return view('admin.technologies.show', compact('technology'));
+    }
+
     public function edit(Technology $technology)
     {
         return view('admin.technologies.edit', compact('technology'));

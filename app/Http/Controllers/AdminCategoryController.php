@@ -23,9 +23,9 @@ class AdminCategoryController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'image' => 'nullable|image|max:2048',
-            'header_image' => 'nullable|image|max:2048',
+            'description' => 'required|string',
+            'image' => 'required|image|max:2048',
+            'header_image' => 'required|image|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
@@ -45,6 +45,11 @@ class AdminCategoryController extends Controller
         return redirect()->route('admin.categories.index');
     }
 
+    public function show(Category $category)
+    {
+        return view('admin.categories.show', compact('category'));
+    }
+
     public function edit(Category $category)
     {
         return view('admin.categories.edit', compact('category'));
@@ -54,7 +59,7 @@ class AdminCategoryController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
+            'description' => 'required|string',
             'image' => 'nullable|image|max:2048',
             'header_image' => 'nullable|image|max:2048',
         ]);

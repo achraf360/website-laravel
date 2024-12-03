@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'ref', 'description', 'weight', 'dimensions', 'packaging', 'category_id', 'technology_id', 'recipe_id', 'image', 'is_active'];
+    protected $fillable = ['name', 'slug', 'ref', 'description', 'weight', 'dimensions', 'packaging', 'category_id', 'technology_id', 'recipe_id', 'image', 'is_active'];
 
     public function category()
     {
@@ -22,5 +23,18 @@ class Product extends Model
     public function recipe()
     {
         return $this->belongsTo(Recipe::class);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($product) {
+            $product->slug = Str::slug($product->name);
+        });
+
+        static::updating(function ($product) {
+            $product->slug = Str::slug($product->name);
+        });
     }
 }

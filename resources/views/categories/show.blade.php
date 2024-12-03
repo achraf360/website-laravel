@@ -48,7 +48,7 @@
   </section>
 
   <section class="flex flex-col bg-slate-100 p-10">
-    <h2 class="text-5xl font-extrabold mb-20 text-center">Produits</h2>
+    <h2 class="text-5xl font-extrabold mb-20 text-center">Nos Produits</h2>
     <!-- @livewire('search-bar') -->
     <div class="flex flex-row">
 

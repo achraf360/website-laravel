@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Manage Categories')
+@section('title', 'Gérer les catégories')
 
 @section('content')
-<h1 class="text-3xl font-bold mb-4">Manage Categories</h1>
+<!-- <h1 class="text-3xl font-bold mb-4">Manage Categories</h1>
 <a href="{{ route('admin.categories.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add New Category</a>
 <ul class="list-disc pl-5 mt-4">
     @foreach($categories as $category)
@@ -16,5 +16,9 @@
         </form>
     </li>
     @endforeach
-</ul>
+</ul> -->
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Gérer les catégories</h1>
+    @livewire('admin-categories-list')
+</div>
 @endsection

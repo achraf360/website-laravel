@@ -12,20 +12,20 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+                    <!-- <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
                         {{ __('Dashboard') }}
-                    </x-nav-link>
+                    </x-nav-link> -->
                     <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
-                        {{ __('Categories') }}
+                        {{ __('Catégories') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.index')">
-                        {{ __('Products') }}
+                        {{ __('Produits') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.technologies.index')" :active="request()->routeIs('admin.technologies.index')">
                         {{ __('Technologies') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.recipes.index')" :active="request()->routeIs('admin.recipes.index')">
-                        {{ __('Recipes') }}
+                        {{ __('Recettes') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -54,7 +54,7 @@
                             <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Se déconnecter') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

@@ -1,18 +1,18 @@
 @extends('layouts.admin')
 
-@section('title', 'Create Product')
+@section('title', 'Créer un produit')
 
 @section('content')
-<h1 class="text-3xl font-bold mb-4">Create Product</h1>
+<h1 class="text-3xl font-bold mb-4">Créer un produit</h1>
 
-<form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data" class="w-1/2">
     @csrf
     <div class="mb-4">
-        <label for="ref" class="block text-gray-700 text-sm font-bold mb-2">Code:</label>
+        <label for="ref" class="block text-gray-700 text-sm font-bold mb-2">Reference:</label>
         <input type="text" name="ref" id="ref" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
     </div>
     <div class="mb-4">
-        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nom:</label>
         <input type="text" name="name" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
     </div>
     <div class="mb-4">
@@ -28,7 +28,11 @@
         <input type="text" name="packaging" id="packaging" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></input>
     </div>
     <div class="mb-4">
-        <label for="category_id" class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
+        <label for="dimensions" class="block text-gray-700 text-sm font-bold mb-2">Dimensions:</label>
+        <input type="text" name="dimensions" id="dimensions" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></input>
+    </div>
+    <div class="mb-4">
+        <label for="category_id" class="block text-gray-700 text-sm font-bold mb-2">Categorie:</label>
         <select name="category_id" id="category_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
             @foreach($categories as $category)
             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -61,7 +65,7 @@
     </div>
     <div class="flex items-center justify-between">
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-            Create
+            Créer
         </button>
     </div>
 </form>

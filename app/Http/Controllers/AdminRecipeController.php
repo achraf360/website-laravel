@@ -31,9 +31,9 @@ class AdminRecipeController extends Controller
         return redirect()->route('admin.recipes.index');
     }
 
-    public function show(string $id)
+    public function show(Recipe $recipe)
     {
-        //
+        return view('admin.recipes.show', compact('recipe'));
     }
 
     public function edit(Recipe $recipe)

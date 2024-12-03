@@ -14,10 +14,12 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
+
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+<body class="font-montserrat">
+    <div class="min-h-screen bg-gray-100 flex flex-col">
         @include('layouts.admin_navigation')
 
         <!-- Page Heading -->
@@ -30,14 +32,17 @@
         @endif
 
         <!-- Page Content -->
-        <main class="overflow-auto p-10" id="main">
+        <main class="overflow-x-hidden flex-grow p-10" id="main">
             @yield('content')
         </main>
 
-        <footer class="bg-gray-800 text-white p-4 text-center">
-            <p>&copy; {{ date('Y') }} Delis. All rights reserved.</p>
+        <footer class="bg-gray-800 text-white p-4 text-center bottom-0 w-full">
+            <p>&copy; {{ date('Y') }}. All rights reserved.</p>
         </footer>
     </div>
+
+    @livewireScripts
+    @vite('resources/js/app.js')
 </body>
 
 </html>

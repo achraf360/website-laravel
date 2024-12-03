@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Manage Products')
+@section('title', 'Gérer les produits')
 
 @section('content')
-<h1 class="text-3xl font-bold mb-4">Manage Products</h1>
+<!-- <h1 class="text-3xl font-bold mb-4">Manage Products</h1>
 <a href="{{ route('admin.products.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add New Product</a>
 <ul class="list-disc pl-5 mt-4">
     @foreach($products as $product)
@@ -16,5 +16,9 @@
         </form>
     </li>
     @endforeach
-</ul>
+</ul> -->
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Gérer les produits</h1>
+    @livewire('admin-products-list')
+</div>
 @endsection

@@ -14,6 +14,8 @@ class ProductSearch extends Component
     public $query = '';
     public $selectedRecipes = [];
 
+    protected $paginationTheme = 'tailwind';
+
     public function mount(Category $category)
     {
         $this->category = $category;
@@ -21,20 +23,17 @@ class ProductSearch extends Component
 
     public function updatedQuery()
     {
-        Log::info('Query updated: ' . $this->query);
+        $this->resetPage();
     }
 
-    public function updatedSelectedRecipes()
-    {
-        Log::info('Selected Recipes updated: ' . implode(', ', $this->selectedRecipes));
-    }
+    // public function updatedSelectedRecipes()
+    // {
+    //     $this->resetPage();
+    // }
 
 
     public function render()
     {
-        Log::info('Render method called');
-        Log::info('Query: ' . $this->query);
-        Log::info('Selected Recipes: ' . implode(', ', $this->selectedRecipes));
         $products = $this->category->products()
             ->when($this->query, function ($queryBuilder) {
                 $queryBuilder->where('name', 'like', "%{$this->query}%");
@@ -42,7 +41,7 @@ class ProductSearch extends Component
             ->when($this->selectedRecipes, function ($queryBuilder) {
                 $queryBuilder->whereIn('recipe_id', $this->selectedRecipes);
             })
-            ->get();
+            ->paginate(9);
 
         $recipes = Recipe::all();
 
