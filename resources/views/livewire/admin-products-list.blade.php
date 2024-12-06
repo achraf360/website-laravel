@@ -32,8 +32,8 @@
         <td class="py-2 px-4 border-b cursor-pointer hover:bg-gray-100 transition-colors duration-300" onclick=window.location='{{ route('admin.products.show', $product->id) }}'>{{ $product->name }}</td>
         <td class="py-2 px-4 border-b">{{ $product->category->name }}</td>
         <td class="py-2 px-4 border-b font-normal z-50">
-          <a href="{{ route('admin.products.edit', $product->id) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Modifier</a>
-          <button wire:click="deleteProduct({{ $product->id }})" class="bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded">Supprimer</button>
+          <a href="{{ route('admin.products.edit', $product->id) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded"><i class="fa-solid fa-pen-to-square"></i></a>
+          <button wire:click="deleteProduct({{ $product->id }})" class="bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded"><i class="fa-solid fa-trash"></i></button>
         </td>
       </tr>
       @endforeach

@@ -2,12 +2,19 @@
     <!-- Search and Filter Sidebar -->
     <div class="w-1/4 p-4 bg-white shadow-lg rounded-lg">
         <h2 class="text-xl font-normal mb-4">Recherche</h2>
-        <input type="text" wire:model.live.debounce.500ms="query" name="query" class="w-full p-2 border rounded mb-4" placeholder="Search products...">
+        <input type="text" wire:model.live.debounce.500ms="query" name="query" class="w-full p-2 border rounded mb-4" placeholder="Cherche produits...">
         <h3 class="text-xl font-normal mb-2">Filtrer par recette</h3>
         @foreach($recipes as $recipe)
         <div class="mb-2 text-sm">
             <input type="checkbox" wire:model.live="selectedRecipes" id="recipe_{{ $recipe->id }}" value="{{ $recipe->id }}" class="recipe-checkbox">
             <label for="recipe_{{ $recipe->id }}">{{ $recipe->name }}</label>
+        </div>
+        @endforeach
+        <h3 class="text-xl font-normal mb-2 mt-5">Filtrer par technologie</h3>
+        @foreach($technologies as $technology)
+        <div class="mb-2 text-sm">
+            <input type="checkbox" wire:model.live="selectedRecipes" id="technology_{{ $technology->id }}" value="{{ $technology->id }}" class="technology-checkbox">
+            <label for="technology_{{ $technology->id }}">{{ $technology->name }}</label>
         </div>
         @endforeach
     </div>

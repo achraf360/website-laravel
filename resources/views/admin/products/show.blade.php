@@ -18,7 +18,7 @@
             <p class="text-md font-normal">Recette : {{ $product->recipe->name }}</p>
             <p class="text-md font-normal">Créé à {{ $product->created_at }}</p>
             <p class="text-md font-normal">Mis à jour à {{ $product->updated_at }}</p>
-            <a href="{{ route('admin.categories.edit', $product->id) }}" class="bg-yellow-500 w-fit hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Modifier le produit</a>
+            <a href="{{ route('admin.products.edit', $product->id) }}" class="bg-yellow-500 w-fit hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Modifier le produit</a>
         </div>
     </div>
 

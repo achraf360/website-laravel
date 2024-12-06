@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Technology;
+use Illuminate\Database\QueryException;
 
 class AdminTechnologiesList extends Component
 {
@@ -13,6 +14,7 @@ class AdminTechnologiesList extends Component
     protected $paginationTheme = 'tailwind';
 
     public $search = '';
+    public $errorMessage = '';
 
     public function updatingSearch()
     {
@@ -21,10 +23,19 @@ class AdminTechnologiesList extends Component
 
     public function deleteTechnology($technologyId)
     {
-        $technology = Technology::find($technologyId);
-        if ($technology) {
-            $technology->delete();
+        try {
+            $technology = Technology::find($technologyId);
+            if ($technology) {
+                $technology->delete();
+            }
+        } catch (QueryException $e) {
+            $this->errorMessage = 'Cannot delete this technology because it is associated with other records.';
         }
+    }
+
+    public function clearErrorMessage()
+    {
+        $this->errorMessage = '';
     }
 
     public function render()

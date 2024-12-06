@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Category;
+use Illuminate\Database\QueryException;
 
 class AdminCategoriesList extends Component
 {
@@ -13,6 +14,7 @@ class AdminCategoriesList extends Component
     protected $paginationTheme = 'tailwind';
 
     public $search = '';
+    public $errorMessage = '';
 
     public function updatingSearch()
     {
@@ -21,10 +23,19 @@ class AdminCategoriesList extends Component
 
     public function deleteCategory($categoryId)
     {
-        $category = Category::find($categoryId);
-        if ($category) {
-            $category->delete();
+        try {
+            $category = Category::find($categoryId);
+            if ($category) {
+                $category->delete();
+            }
+        } catch (QueryException $e) {
+            $this->errorMessage = 'Cannot delete this category because it is associated with other records.';
         }
+    }
+
+    public function clearErrorMessage()
+    {
+        $this->errorMessage = '';
     }
 
     public function render()
