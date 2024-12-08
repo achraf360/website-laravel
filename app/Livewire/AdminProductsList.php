@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Product;
+use Illuminate\Database\QueryException;
 
 class AdminProductsList extends Component
 {
@@ -13,6 +14,7 @@ class AdminProductsList extends Component
     protected $paginationTheme = 'tailwind';
 
     public $search = '';
+    public $errorMessage = '';
 
     public function updatingSearch()
     {
@@ -21,10 +23,19 @@ class AdminProductsList extends Component
 
     public function deleteProduct($productId)
     {
-        $product = Product::find($productId);
-        if ($product) {
-            $product->delete();
+        try {
+            $product = Product::find($productId);
+            if ($product) {
+                $product->delete();
+            }
+        } catch (QueryException $e) {
+            $this->errorMessage = 'Cannot delete this product because it is associated with other records.';
         }
+    }
+
+    public function clearErrorMessage()
+    {
+        $this->errorMessage = '';
     }
 
     public function render()

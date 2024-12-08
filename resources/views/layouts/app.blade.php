@@ -45,7 +45,7 @@
         <div class="sm:col-span-2">
           <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
 
-            <img src="{{ asset('images/Logo-def-VEC.png') }}" alt="Logo" class="h-16 w-auto">
+            <img src="{{ asset('images/tulipe-logo.png') }}" alt="Logo" class="h-16 w-auto">
           </a>
           <div class="mt-6 lg:max-w-sm">
             <p class="text-sm text-gray-800">
@@ -59,7 +59,7 @@
         <div class="space-y-2 text-sm">
           <p class="text-base font-bold tracking-wide text-gray-900">Contacts</p>
           <div class="flex">
-            <p class="mr-1 text-gray-800">Phone:</p>
+            <p class="mr-1 text-gray-800">Téléphone:</p>
             <a href="tel:850-123-5021" aria-label="Our phone" title="Our phone" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">850-123-5021</a>
           </div>
           <div class="flex">
@@ -67,14 +67,14 @@
             <a href="mailto:info@lorem.mail" aria-label="Our email" title="Our email" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">info@lorem.mail</a>
           </div>
           <div class="flex">
-            <p class="mr-1 text-gray-800">Address:</p>
+            <p class="mr-1 text-gray-800">Adresse:</p>
             <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" aria-label="Our address" title="Our address" class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">
               312 Lovely Street, NY
             </a>
           </div>
         </div>
         <div>
-          <span class="text-base font-bold tracking-wide text-gray-900">Social</span>
+          <span class="text-base font-bold tracking-wide text-gray-900">Sociale</span>
           <div class="flex items-center mt-1 space-x-3">
             <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
               <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
@@ -103,24 +103,18 @@
       </div>
       <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
         <p class="text-sm text-gray-600">
-          © Copyright 2024 Lorem Inc. All rights reserved.
+          © Copyright 2024 Lorem Inc. Tous droits réservés.
         </p>
         <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
-          <li>
-            <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">F.A.Q</a>
-          </li>
           <li>
             <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Privacy Policy</a>
           </li>
           <li>
-            <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Terms &amp; Conditions</a>
+            <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Conditions générales</a>
           </li>
         </ul>
       </div>
     </footer>
-    <!-- <footer class="bg-gray-800 text-white p-4 text-center">
-      <p>&copy; {{ date('Y') }} Delis. All rights reserved.</p>
-    </footer> -->
 
     @livewireScripts
     @vite('resources/js/app.js')

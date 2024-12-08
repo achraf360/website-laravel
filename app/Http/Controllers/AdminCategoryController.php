@@ -25,7 +25,7 @@ class AdminCategoryController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'image' => 'required|image|max:2048',
-            'header_image' => 'required|image|max:2048',
+            // 'header_image' => 'required|image|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
@@ -61,7 +61,7 @@ class AdminCategoryController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'image' => 'nullable|image|max:2048',
-            'header_image' => 'nullable|image|max:2048',
+            // 'header_image' => 'nullable|image|max:2048',
         ]);
 
         if ($request->hasFile('image')) {
@@ -80,22 +80,22 @@ class AdminCategoryController extends Controller
                 $validated['image'] = null;
             }
         }
-        if ($request->hasFile('header_image')) {
-            // Delete the old header image if it exists
-            if ($category->header_image) {
-                Storage::disk('public')->delete(str_replace('/storage/', '', $category->header_image));
-            }
+        // if ($request->hasFile('header_image')) {
+        //     // Delete the old header image if it exists
+        //     if ($category->header_image) {
+        //         Storage::disk('public')->delete(str_replace('/storage/', '', $category->header_image));
+        //     }
 
-            $headerImageName = $request->file('header_image')->getClientOriginalName();
-            $path = $request->file('header_image')->storeAs('images/categories', $headerImageName, 'public');
-            $validated['header_image'] = '/storage/' . $path;
-        } elseif ($request->input('delete_header_image') === '1') {
-            // Delete the old header image if the delete_header_image checkbox is checked
-            if ($category->header_image) {
-                Storage::disk('public')->delete(str_replace('/storage/', '', $category->header_image));
-                $validated['header_image'] = null;
-            }
-        }
+        //     $headerImageName = $request->file('header_image')->getClientOriginalName();
+        //     $path = $request->file('header_image')->storeAs('images/categories', $headerImageName, 'public');
+        //     $validated['header_image'] = '/storage/' . $path;
+        // } elseif ($request->input('delete_header_image') === '1') {
+        //     // Delete the old header image if the delete_header_image checkbox is checked
+        //     if ($category->header_image) {
+        //         Storage::disk('public')->delete(str_replace('/storage/', '', $category->header_image));
+        //         $validated['header_image'] = null;
+        //     }
+        // }
 
         $category->update($validated);
 

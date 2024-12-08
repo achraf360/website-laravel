@@ -17,10 +17,10 @@
   <div class="flex flex-row px-10 py-10 gap-8">
     <div class="flex flex-col">
       <span class="text-2xl font-bold">
-        +15 Years
+        +15 Années
       </span>
       <span class="text-gray-600">
-        Experience
+        Expérience
       </span>
     </div>
     <div class="flex flex-col">
@@ -28,7 +28,7 @@
         +200
       </span>
       <span class="text-gray-600">
-        Products
+        Produits
       </span>
     </div>
     <div class="flex flex-col">
@@ -55,14 +55,14 @@
     <div class="flex flex-col md:w-1/2 md:pr-10 lg:pr-40">
       <h1
         class="text-2xl md:text-2xl font-yellowtail text-chopain-red opacity-75">
-        About us
+        à propos de nous
       </h1>
       <h1
         class=" decoration-chopain-orange text-2xl lg:text-4xl font-black text-black mb-6">
         Solution Complète Adaptée à Vos Besoins
       </h1>
       <p class="font-light text-xl md:text-base w-full">
-        DELI’S propose une solution clé en main qui combine une gamme diversifiée de produits et un service professionnel. Avec plus de 200 références en boulangerie, viennoiserie, pâtisserie et snacking, nous vous offrons des produits performants, prêts à satisfaire les attentes de vos clients tout en s’intégrant parfaitement à votre activité.
+        On propose une solution clé en main qui combine une gamme diversifiée de produits et un service professionnel. Avec plus de 200 références en boulangerie, viennoiserie, pâtisserie et snacking, nous vous offrons des produits performants, prêts à satisfaire les attentes de vos clients tout en s’intégrant parfaitement à votre activité.
         <br />
         <br />
         Nos produits sont soigneusement stockés dans des conditions optimales et prêts à être préparés rapidement, garantissant une fraîcheur et une qualité constantes.

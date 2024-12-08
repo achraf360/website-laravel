@@ -29,8 +29,8 @@ use App\Http\Controllers\ContactController;
 // Public routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-Route::get('/categories/{category:name}', [CategoryController::class, 'show'])->name('categories.show');
-Route::get('/products/{product:name}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/categories/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact-us', [ContactController::class, 'send'])->name('contact.send');
 

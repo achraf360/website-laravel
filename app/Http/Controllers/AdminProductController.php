@@ -40,6 +40,7 @@ class AdminProductController extends Controller
             'dimensions' => 'required|numeric',
             'technology_id' => 'required|exists:technologies,id',
             'recipe_id' => 'required|exists:recipes,id',
+            'is_active' => 'boolean',
         ]);
         if ($request->hasFile('image')) {
             $imageName = $request->file('image')->getClientOriginalName();
@@ -47,7 +48,7 @@ class AdminProductController extends Controller
             $validated['image'] = '/storage/' . $path;
         }
         Product::create($validated);
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.index')->with('success', 'Product created successfully.');
     }
 
     public function show(Product $product)
@@ -77,6 +78,7 @@ class AdminProductController extends Controller
             'dimensions' => 'required|numeric',
             'technology_id' => 'required|exists:technologies,id',
             'recipe_id' => 'required|exists:recipes,id',
+            'is_active' => 'boolean',
         ]);
         if ($request->hasFile('image')) {
             // Delete the old image if it exists
@@ -96,7 +98,7 @@ class AdminProductController extends Controller
         }
         // Display a terminal message
         $product->update($validated);
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.index')->with('success', 'Product updated successfully.');
     }
 
     public function destroy(Product $product)

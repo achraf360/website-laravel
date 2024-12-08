@@ -32,7 +32,7 @@
             </div>
 
             <!-- No Products Message -->
-            <div wire:loading.remove wire:target="query,selectedRecipes">
+            <div wire:loading.remove wire:target="query,selectedRecipes,selectedTechnologies">
                 @if ($products->isEmpty())
                 <div class="flex justify-center items-center">
                     <p class="text-gray-500">No products found.</p>
@@ -44,14 +44,14 @@
                 <ul class="list-disc pl-5 grid grid-flow-row grid-cols-3 place-items-center gap-4">
                     @foreach($products as $product)
                     <li class="w-60 h-full grow shrink-0 bg-white rounded-3xl text-neutral-800 flex flex-col items-start justify-center gap-3 hover:shadow-2xl hover:shadow-indigo-800 hover:-translate-y-1 transition-all duration-300">
-                        <div class="w-full h-full rounded-2xl bg-cover bg-center">
+                        <a href="{{ route('products.show', $product->id) }}" class="w-full h-full rounded-2xl bg-cover bg-center">
                             <img src="{{ $product->image }}" alt="{{ $product->name }}" class="w-full h-full object-cover rounded-2xl" loading="lazy">
-                        </div>
+                        </a>
                         <div class="flex flex-col p-4 gap-4 w-full">
                             <p class="font-extrabold">{{ $product->name }}</p>
                             <div class="flex flex-col">
-                                <p class="text-sm">Poids à l'unité : {{ $product->weight }}</p>
-                                <p class="text-sm">Unités par carton : {{ $product->packaging }}</p>
+                                <p class="text-sm">Poids à l'unité : {{ $product->weight }} g</p>
+                                <p class="text-sm">Unités par carton : {{ $product->packaging }} U</p>
                             </div>
                             <span class="bg-sky-700 font-extrabold p-2 px-6 rounded-xl text-center text-white">{{ $product->ref }}</span>
                         </div>

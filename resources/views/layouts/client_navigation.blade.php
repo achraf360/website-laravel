@@ -26,7 +26,7 @@
     <ul class="flex w-full flex-wrap items-center justify-between">
         <li class="block relative">
             <a href="/" class="flex items-center cursor-pointer">
-                <img src="{{ asset('images/Logo-delis.jpg') }}" alt="Logo" class="h-20 w-auto">
+                <img src="{{ asset('images/tulipe-logo.png') }}" alt="Logo" class="h-20 w-auto">
             </a>
         </li>
         <div class="flex flex-row text-xl font-normal text-gray-600">
@@ -40,7 +40,7 @@
                         <ul class="list-reset font-normal text-base">
                             @foreach($categories as $category)
                             <li class="relative" x-data="{showChildren:false}" @mouseleave="showChildren=false" @mouseenter="showChildren=true">
-                                <a href="{{ route('categories.show', $category->name) }}" class="px-4 py-4 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">{{ $category->name }}</span> </a>
+                                <a href="{{ route('categories.show', $category->slug) }}" class="px-4 py-4 flex w-full items-start hover:bg-gray-100 no-underline hover:no-underline transition-colors duration-100 cursor-pointer"> <span class="flex-1">{{ $category->name }}</span> </a>
                             </li>
                             @endforeach
                         </ul>

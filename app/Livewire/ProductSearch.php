@@ -42,6 +42,7 @@ class ProductSearch extends Component
     public function render()
     {
         $products = $this->category->products()
+            ->where('is_active', 1)
             ->when($this->query, function ($queryBuilder) {
                 $queryBuilder->where('name', 'like', "%{$this->query}%");
             })

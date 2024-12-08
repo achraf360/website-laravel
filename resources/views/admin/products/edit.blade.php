@@ -57,6 +57,11 @@
         </select>
     </div>
     <div class="mb-4">
+        <label for="is_active" class="block text-gray-700 text-sm font-bold mb-2">Active:</label>
+        <input type="hidden" name="is_active" value="0">
+        <input type="checkbox" name="is_active" id="is_active" class="shadow appearance-none border rounded text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="1" {{ $product->is_active ? 'checked' : '' }}>
+    </div>
+    <div class="mb-4">
         <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Image:</label>
         @if ($product->image)
         <img src="{{ $product->image }}" alt="{{ $product->name }}" class="w-16 h-16 mb-2">

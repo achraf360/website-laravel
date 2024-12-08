@@ -25,7 +25,7 @@ class CategoryController extends Controller
 
 
 
-        $products = $category->products;
+        $products = $category->products()->where('is_active', 1);
 
         // if (request()->has('search')) {
         //     $products = $category->products->filter(function ($product) {

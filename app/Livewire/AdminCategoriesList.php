@@ -45,6 +45,7 @@ class AdminCategoriesList extends Component
 
         return view('livewire.admin-categories-list', [
             'categories' => $categories,
+            'errorMessage' => $this->errorMessage,
         ]);
     }
 }
