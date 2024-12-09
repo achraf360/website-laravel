@@ -9,7 +9,7 @@
     <h1 class="text-5xl font-bold mb-4">L’Excellence de la <span class="text-indigo-800">Boulangerie</span> et <span class="text-green-800">Viennoiserie</span> industrielles</h1>
     <p class="text-base text-slate-500 mb-8">Chez DELI’S, nous allions innovation et qualité pour offrir une large gamme de produits en boulangerie, pâtisserie, viennoiserie et snacking. Partenaire privilégié des professionnels CHR à travers tout le Maroc, nous nous engageons à fournir des produits performants et un service irréprochable.</p>
 
-    <a href="{{ route('categories.index') }}"
+    <a href="categories/boulangerie"
       class="inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-indigo-800 hover:bg-[#6FB72B] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200">
       Découvrir nos produits
     </a>
@@ -97,7 +97,7 @@
         </a>
       </div>
       <div class="flex">
-        <a href="{{ route('categories.index') }}"
+        <a href="/contact-us"
           class="inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-indigo-800 hover:bg-[#6FB72B] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200">
           Contactez-Nous
         </a>
@@ -114,7 +114,7 @@
   <ul class="list-disc pl-5 grid grid-flow-row grid-cols-3 place-items-center gap-4">
     @foreach($categories as $category)
     <!-- <a href="{{ route('categories.show', $category->id) }}"> -->
-    <a href="{{ route('categories.show', $category->name) }}"
+    <a href="{{ route('categories.show', $category->slug) }}"
       class="flex items-center relative bg-cover bg-center overflow-hidden w-full h-80 rounded-3xl cursor-pointer text-2xl font-bold" style="background-image: url('{{ $category->image }}');">
 
       <div class="z-10 absolute w-full h-full peer"></div>

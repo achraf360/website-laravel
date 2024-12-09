@@ -23,6 +23,7 @@ This project is a website for a food industry brand that produces various types 
 -   **Admin Interface**: Manage the content of the website, including products and categories.
 -   **Live Search**: Use Livewire for live searching by typing the name of the product or selecting other attributes like "technologie" or "recette".
 -   **Email Sending**: Use Mailtrap for testing email functionality.
+-   **Product Details**: View detailed information about each product, including descriptions and images.
 
 ## Status
 
@@ -67,6 +68,7 @@ This project is a website for a food industry brand that produces various types 
 -   Access the website at `http://localhost:8000`.
 -   Navigate to `/admin` for backoffice access to manage data.
 -   Use the search functionality to find products by name or attributes.
+-   View detailed information about each product on the product details page.
 
 ## Technologies Used
 
@@ -132,6 +134,12 @@ For any questions or inquiries, please contact [Achraf Mouissa](mailto:mouissa.a
             <td>
                 <strong>Test Email</strong><br>
                 <img src="/public/images/screenshots/Test-email.png" alt="Test email" width="500">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Product Details</strong><br>
+                <img src="/public/images/screenshots/Product-details.png" alt="Product Details" width="500">
             </td>
         </tr>
     </table>
