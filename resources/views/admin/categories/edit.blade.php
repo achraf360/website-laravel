@@ -25,7 +25,7 @@
         @endif
         <input type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     </div>
-    <div class="mb-4">
+    <!-- <div class="mb-4">
         <label for="header_image" class="block text-gray-700 text-sm font-bold mb-2">En-tête Image:</label>
         @if ($category->header_image)
         <img src="{{ $category->header_image }}" alt="{{ $category->name }}" class="w-16 h-16 mb-2">
@@ -33,7 +33,7 @@
         <label for="delete_header_image" class="text-red-500">Supprimer l'image d'en-tête</label>
         @endif
         <input type="file" name="header_image" id="header_image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-    </div>
+    </div> -->
     <div class="flex items-center justify-between">
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Modifier
