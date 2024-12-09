@@ -9,7 +9,13 @@
             </a>
         </li>
         <div class="flex flex-row text-xl font-normal text-gray-600">
+            <li class="block relative">
+                <a href="/" class="flex items-center h-16 leading-10 px-4 rounded cursor-pointer no-underline hover:no-underline transition-colors duration-100 mx-1 hover:bg-gray-100">
+                    Accueil
+                </a>
+            </li>
             <li class="block relative" x-data="{showChildren:false}" @click.away="showChildren=false">
+
                 <a href="" class="flex items-center h-16 leading-10 px-4 rounded cursor-pointer no-underline hover:no-underline transition-colors duration-100 mx-1 hover:bg-gray-100" @click.prevent="showChildren=!showChildren">
                     <span>Nos produits</span><i class="fa-solid fa-chevron-down pl-2"></i>
                 </a>
