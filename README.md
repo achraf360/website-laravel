@@ -1,6 +1,6 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-# Project Title
+# WebSite Laravel
 
 ## About Project
 
@@ -34,11 +34,11 @@ This project is a website for a food industry brand that produces various types 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/yourproject.git
+    git clone https://github.com/achraf360/website-laravel.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd yourproject
+    cd website-laravel
     ```
 3. Install dependencies:
     ```bash
@@ -65,7 +65,7 @@ This project is a website for a food industry brand that produces various types 
 ## Usage
 
 -   Access the website at `http://localhost:8000`.
--   Use the admin interface to manage products and categories.
+-   Navigate to `/admin` for backoffice access to manage data.
 -   Use the search functionality to find products by name or attributes.
 
 ## Technologies Used
@@ -97,41 +97,41 @@ For any questions or inquiries, please contact [Achraf Mouissa](mailto:mouissa.a
         <tr>
             <td>
                 <strong>Hero Section</strong><br>
-                <img src="/public/images/screenshots/Hero.png" alt="Hero Section" width="300">
+                <img src="/public/images/screenshots/Hero.png" alt="Hero Section" width="500">
             </td>
             <td>
                 <strong>About us Section</strong><br>
-                <img src="/public/images/screenshots/About-us.png" alt="About us Section" width="300">
+                <img src="/public/images/screenshots/About-us.png" alt="About us Section" width="500">
             </td>
         </tr>
         <tr>
             <td>
                 <strong>Categories Section</strong><br>
-                <img src="/public/images/screenshots/Categories.png" alt="Categories Section" width="300">
+                <img src="/public/images/screenshots/Categories.png" alt="Categories Section" width="500">
             </td>
             <td>
                 <strong>Footer</strong><br>
-                <img src="/public/images/screenshots/Footer.png" alt="Footer" width="300">
+                <img src="/public/images/screenshots/Footer.png" alt="Footer" width="500">
             </td>
         </tr>
         <tr>
             <td>
                 <strong>Category Description</strong><br>
-                <img src="/public/images/screenshots/Category-Description.png" alt="Category Description" width="300">
+                <img src="/public/images/screenshots/Category-Description.png" alt="Category Description" width="500">
             </td>
             <td>
                 <strong>Products List</strong><br>
-                <img src="/public/images/screenshots/Products.png" alt="Products List" width="300">
+                <img src="/public/images/screenshots/Products.png" alt="Products List" width="500">
             </td>
         </tr>
         <tr>
             <td>
                 <strong>Contact us</strong><br>
-                <img src="/public/images/screenshots/Contact-us.png" alt="Contact us" width="300">
+                <img src="/public/images/screenshots/Contact-us.png" alt="Contact us" width="500">
             </td>
             <td>
                 <strong>Test Email</strong><br>
-                <img src="/public/images/screenshots/Test-email.png" alt="Test email" width="300">
+                <img src="/public/images/screenshots/Test-email.png" alt="Test email" width="500">
             </td>
         </tr>
     </table>
@@ -144,27 +144,27 @@ For any questions or inquiries, please contact [Achraf Mouissa](mailto:mouissa.a
         <tr>
             <td>
                 <strong>Login Page</strong><br>
-                <img src="/public/images/screenshots/login.png" alt="Login Page" width="300">
+                <img src="/public/images/screenshots/login.png" alt="Login Page" width="500">
             </td>
             <td>
                 <strong>Dashboard</strong><br>
-                <img src="/public/images/screenshots/Dashboard.png" alt="Dashboard" width="300">
+                <img src="/public/images/screenshots/Dashboard.png" alt="Dashboard" width="500">
             </td>
         </tr>
         <tr>
             <td>
                 <strong>Categories List</strong><br>
-                <img src="/public/images/screenshots/Categories-admin-list.png" alt="Categories List" width="300">
+                <img src="/public/images/screenshots/Categories-admin-list.png" alt="Categories List" width="500">
             </td>
             <td>
                 <strong>Category Create</strong><br>
-                <img src="/public/images/screenshots/Category-create.png" alt="Category Create" width="300">
+                <img src="/public/images/screenshots/Category-create.png" alt="Category Create" width="500">
             </td>
         </tr>
          <tr>
             <td>
                 <strong>Category Update</strong><br>
-                <img src="/public/images/screenshots/Category-update.png" alt="Category Update" width="300">
+                <img src="/public/images/screenshots/Category-update.png" alt="Category Update" width="500">
             </td>
         </tr>
     </table>
